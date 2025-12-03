@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://ljfmaskovn08"]
+
+[ext_resource type="Texture2D" uid="uid://blk81e0kny7o" path="res://assets/purpleman.png" id="1_ps6yq"]
+[ext_resource type="Script" uid="uid://bafh87qx53g05" path="res://scenes/purpleman.gd" id="1_yacd8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps6yq"]
+atlas = ExtResource("1_ps6yq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yacd8"]
+atlas = ExtResource("1_ps6yq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w8j1"]
+atlas = ExtResource("1_ps6yq")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwxph"]
+atlas = ExtResource("1_ps6yq")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnbl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps6yq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yacd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w8j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwxph")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bws14"]
+size = Vector2(104, 180)
+
+[node name="purpleman" type="CharacterBody2D"]
+script = ExtResource("1_yacd8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 3.1415927
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_rnbl8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_bws14")

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfmffw0vckbak"]
+
+[ext_resource type="Script" uid="uid://dim35hsitth18" path="res://scripts/yellowman.gd" id="1_hb5vr"]
+[ext_resource type="Texture2D" uid="uid://3ttf4nti88q1" path="res://assets/yellowman.png" id="1_xx47d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwlkh"]
+atlas = ExtResource("1_xx47d")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lc5y"]
+atlas = ExtResource("1_xx47d")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp2qq"]
+atlas = ExtResource("1_xx47d")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vjxj"]
+atlas = ExtResource("1_xx47d")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnbl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwlkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lc5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp2qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vjxj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bws14"]
+size = Vector2(104, 180)
+
+[node name="Yellowman" type="CharacterBody2D"]
+script = ExtResource("1_hb5vr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_rnbl8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6744856
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_bws14")

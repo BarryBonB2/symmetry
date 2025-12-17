@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bws14"]
-size = Vector2(104, 180)
+size = Vector2(129.99998, 224.99997)
 
 [node name="Yellowman" type="CharacterBody2D"]
 script = ExtResource("1_hb5vr")
@@ -54,6 +54,6 @@ autoplay = "idle"
 frame_progress = 0.6744856
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
-scale = Vector2(0.5, 0.5)
+position = Vector2(8.34465e-07, -6.999999)
+scale = Vector2(0.4, 0.4)
 shape = SubResource("RectangleShape2D_bws14")

@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bws14"]
-size = Vector2(104, 180)
+size = Vector2(129.33333, 224.99997)
 
 [node name="purpleman" type="CharacterBody2D"]
 script = ExtResource("1_yacd8")
@@ -54,6 +54,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
-scale = Vector2(0.5, 0.5)
+position = Vector2(0, 6.9999986)
+scale = Vector2(0.4, 0.4)
 shape = SubResource("RectangleShape2D_bws14")

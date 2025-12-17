@@ -6,11 +6,10 @@ class_name Yellow
 @export var move_speed: float = 400.0
 @export var maxHealth : int = 1
 @export var health : int = maxHealth
-const GRAVITY = .01
+const GRAVITY = 1.0
 const JUMP_SPEED =8000.0
 var current_gravity : float=GRAVITY
-var grav_lerp_factor: float= .9
-
+var grav_lerp_factor: float= .75
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -24,7 +23,7 @@ func _physics_process(delta):
 	velocity.y += delta * GRAVITY
 	
 	var motion = velocity * delta
-	move_and_collide(Vector2(0, .5)) # Move down 1 pixel per physics frame
+	move_and_collide(Vector2(0, 1)) # Move down 1 pixel per physics frame
 	if is_on_floor() and  Input.is_action_just_pressed("ui_up"):
 		velocity.y -= JUMP_SPEED
 	if not is_on_floor():
